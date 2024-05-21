@@ -1,0 +1,92 @@
+definitions:
+  Evento:
+    type: object
+    properties:
+      id:
+        type: string
+      tipo:
+        type: string
+      dispositivoId:
+        type: string
+      timestamp:
+        type: string
+        format: date-time
+      detalhes:
+        type: string
+
+  CreateEventoDto:
+    type: object
+    properties:
+      dispositivoId:
+        type: string
+      tipo:
+        type: string
+      detalhes:
+        type: string
+
+  UpdateEventoDto:
+    type: object
+    properties:
+      tipo:
+        type: string
+      dispositivoId:
+        type: string
+      timestamp:
+        type: string
+        format: date-time
+      detalhes:
+        type: string
+  User:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      email:
+        type: string
+      password:
+        type: string
+
+  CreateUserDto:
+    type: object
+    properties:
+      name:
+        type: string
+      email:
+        type: string
+      password:
+        type: string
+  Token:
+    type: object
+    properties:
+      token:
+        type: string
+        example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+  LoginUserDto:
+    type: object
+    required:
+      - email
+      - password
+    properties:
+      email:
+        type: string
+        example: "user@example.com"
+      password:
+        type: string
+        example: "password123"
+  GetAllUserDto:
+    type: object
+    properties:
+      email:
+        type: string
+        example: "user@example.com"
+      name:
+        type: string
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+    description: >-
+      Enter the token with the `Bearer: ` prefix, e.g. "Bearer abcde12345".
