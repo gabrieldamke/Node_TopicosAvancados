@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/gabrieldamke/Node_TopicosAvancados'
+                git 'https://github.com/gabrieldamke/Node_TopicosAvancados.git'
             }
         }
         
